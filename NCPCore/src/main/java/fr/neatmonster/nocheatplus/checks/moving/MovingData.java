@@ -459,6 +459,10 @@ public class MovingData extends ACheckData implements IDataOnRemoveSubCheckData,
         sfZeroVdistRepeat = 0;
         verticalBounce = null;
         // Remember where we send the player to.
+        if (!loc.getBlock().getType().isAir()) {
+            loc.add(0, 1, 0);
+        }
+
         setTeleported(loc);
         // TODO: sfHoverTicks ?
     }
